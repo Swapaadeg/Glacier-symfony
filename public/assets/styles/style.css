@@ -1,0 +1,89 @@
+@font-face {
+    font-family: 'Quicksand' ;
+    src: url(../fonts/Quicksand-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'Bonheur';
+    src: url(../fonts/BonheurRoyale-Regular.ttf);
+}
+
+body {
+    background: linear-gradient(#E0F7FA, #B2EBF2);
+    color: #0D3B66;
+    font-family: 'Quicksand';
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav {
+    background: #ffffffcc;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #B2EBF2;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: #0D3B66;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    padding: 0.5rem 1rem;
+    transition: 0.3s ease-in-out;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0%;
+    height: 2px;
+    background: #FF6F61;
+    transform: translateX(-50%);
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: #FF6F61;
+}
+
+h1 {
+    font-family: 'Bonheur';
+    font-size: 3rem;
+    margin-top: 2rem;
+    color: #0D3B66;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.4);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    color: #4E8098;
+}
+
+.alert-success {
+    background-color: #C8E6C9;
+    border: 1px solid #66BB6A;
+    color: #2E7D32;
+    padding: 1rem;
+    margin: 2rem auto;
+    width: fit-content;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px #a0e0a3;
+}
