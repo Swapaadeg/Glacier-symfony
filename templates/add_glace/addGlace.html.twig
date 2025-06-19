@@ -3,5 +3,9 @@
 {% block title %}Ajouter une glace{% endblock %}
 
 {% block body %}
-
+    <h2>Ajouter une glace</h2>
+    {{ form_start (glaceForm)}}
+        {{ form_widget (glaceForm)}}
+        <button>Ajouter une glace</button>
+    {{ form_end (glaceForm)}}
 {% endblock %}

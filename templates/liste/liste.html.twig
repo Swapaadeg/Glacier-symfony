@@ -3,5 +3,9 @@
 {% block title %}Liste des Glaces{% endblock %}
 
 {% block body %}
+    <h1>Nos Glaces</h1>
 
+    {% for glace in glaces %}
+        <h2>{{ glace.nom }}</h2>
+    {% endfor %}
 {% endblock %}
