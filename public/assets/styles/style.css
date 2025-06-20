@@ -32,6 +32,9 @@ h2 {
     color: #4E8098;
 }
 
+a {
+    text-decoration: none;
+}
 /* NAVBAR */
 nav {
     background: #ffffffcc;
@@ -52,7 +55,6 @@ nav ul {
 
 nav a {
     color: #0D3B66;
-    text-decoration: none;
     font-weight: bold;
     position: relative;
     padding: 0.5rem 1rem;
@@ -136,7 +138,7 @@ form {
     background-color: #ffffff;
 }
 
-button {
+button, .modify-a {
     background-color: #FF6F61;
     color: #ffffff;
     border: none;
@@ -147,6 +149,114 @@ button {
     transition: background-color 0.3s ease;
 }
 
+
 button:hover {
     background-color: #E55A4F;
+}
+
+/* AFFICHAGE DES GLACES */
+
+.glaces-container {
+    position: relative;
+    background: linear-gradient(#e0f7faaa, #b2ebf2aa), url(../img/ice-cream-bg.jpg) no-repeat center center;
+    background-size: cover;
+    backdrop-filter: blur(4px);
+    border-radius: 20px;
+    padding: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem auto;
+    width: 90%;
+    max-width: 1200px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border: 2px solid #B2EBF2;
+}
+
+.glace-card {
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 2px solid #B2EBF2;
+    border-radius: 16px;
+    width: 280px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(3px);
+}
+
+.glace-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.glace-card h2 {
+    font-family: 'Bonheur', cursive;
+    font-size: 1.8rem;
+    color: #0D3B66;
+    margin-bottom: 1rem;
+}
+
+.glace-card .ingredient {
+    color: #4E8098;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.glace-card .cone-type {
+    color: #FF6F61;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.modify-a,
+.delete-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: 'Quicksand';
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+/* Modifier bouton */
+.modify-a {
+    background-color: #FF6F61;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.modify-a:hover {
+    background-color: transparent;
+    border: 2px solid #FF6F61;
+    color: #FF6F61;
+}
+
+/* Supprimer bouton */
+.delete-btn {
+    background-color: transparent;
+    color: #FF6F61;
+    border: 2px solid #FF6F61;
+    margin-top: 1rem;
+    transition: 0.3s ease-in-out;
+}
+
+.delete-btn:hover {
+    background-color: #FF6F61;
+    color: white;
+}
+
+.form-delete {
+    all: unset;
 }

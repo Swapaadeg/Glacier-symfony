@@ -5,7 +5,25 @@
 {% block body %}
     <h1>Nos Glaces</h1>
 
-    {% for glace in glaces %}
-        <h2>{{ glace.nom }}</h2>
-    {% endfor %}
+    <div class="glaces-container">
+        {% for glace in glaces %}
+            <div class="glace-card">
+                <h2>{{ glace.nom }}</h2>
+                <p class="ingredient">Ingrédient spécial : {{ glace.ingredientSpecial }}</p>
+                <p class="cone-type">Cône : {{ glace.cones.type }}</p>
+
+
+                {# FORM DELETE  #}
+                <div class="card-action">               
+                    <a class="modify-a" href="{{ path('modify_glace', { id: glace.id }) }}">Modifier la glace</a>
+
+                    <form class="form-delete" method="POST" onsubmit="return confirm('Confirmer la suppression?')" action="{{ path('delete_glace', {'id' : glace.id}) }}" >
+                        <input type="hidden" name="_method" value="delete">
+                        <input type="hidden" name="_token" value="{{csrf_token('SUP' ~ glace.id)}}">
+                        <button class="delete-btn" type="submit" id="delete" >Supprimer</button>
+                    </form>
+                </div> 
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}

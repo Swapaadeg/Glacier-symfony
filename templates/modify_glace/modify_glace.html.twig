@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier une glace{% endblock %}
+
+{% block body %}
+    <h2>Modifier une glace</h2>
+    {{ form_start (glaceForm)}}
+    <div class="form-group">
+        {{ form_row(glaceForm.nom, {
+            'label' : 'Nom de la glace',
+            'label_attr' : {'class' : 'form-label'},
+            'attr': { 'placeholder': 'Entrez le nom de votre glace', 'class': 'form-input'}
+        }) }}
+    </div>
+    <div class="form-group">
+        {{ form_row(glaceForm.ingredient_special, {
+            'label' : 'Votre ingrédient spécial',
+            'label_attr' : {'class' : 'form-label'},
+            'attr': { 'placeholder': 'Ingrédient spécial', 'class': 'form-input'}
+        }) }}
+    </div>
+    <div class="form-group">
+        {{ form_row(glaceForm.cones, {
+            'label' : 'Le type de cône de votre glace',
+            'label_attr' : {'class' : 'form-label'},
+            'attr': { 'class': 'form-input'}
+        }) }}
+    </div>
+        {{ form_widget (glaceForm)}}
+        <button>Modifier votre glace</button>
+    {{ form_end (glaceForm)}}
+{% endblock %}
