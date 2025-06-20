@@ -14,7 +14,7 @@
 
 
                 {# FORM DELETE  #}
-                <div class="card-action">               
+                <div class="card-actions">               
                     <a class="modify-a" href="{{ path('modify_glace', { id: glace.id }) }}">Modifier la glace</a>
 
                     <form class="form-delete" method="POST" onsubmit="return confirm('Confirmer la suppression?')" action="{{ path('delete_glace', {'id' : glace.id}) }}" >
