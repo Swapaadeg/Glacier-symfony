@@ -7,7 +7,7 @@
     font-family: 'Bonheur';
     src: url(../fonts/BonheurRoyale-Regular.ttf);
 }
-
+/* BASE  */
 body {
     background: linear-gradient(#E0F7FA, #B2EBF2);
     color: #0D3B66;
@@ -17,6 +17,22 @@ body {
     text-align: center;
 }
 
+
+h1 {
+    font-family: 'Bonheur';
+    font-size: 3rem;
+    margin-top: 2rem;
+    color: #0D3B66;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.4);
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    color: #4E8098;
+}
+
+/* NAVBAR */
 nav {
     background: #ffffffcc;
     backdrop-filter: blur(8px);
@@ -63,20 +79,7 @@ nav a:hover {
     color: #FF6F61;
 }
 
-h1 {
-    font-family: 'Bonheur';
-    font-size: 3rem;
-    margin-top: 2rem;
-    color: #0D3B66;
-    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.4);
-}
-
-h2 {
-    font-size: 2rem;
-    margin-top: 1.5rem;
-    color: #4E8098;
-}
-
+/* SUCCESS  */
 .alert-success {
     background-color: #C8E6C9;
     border: 1px solid #66BB6A;
@@ -86,4 +89,64 @@ h2 {
     width: fit-content;
     border-radius: 10px;
     box-shadow: 0 2px 5px #a0e0a3;
+}
+
+/* FORMULAIRE */
+
+form {
+    background-color: #ffffffcc;
+    backdrop-filter: blur(6px);
+    padding: 3rem;
+    width: 50%;
+    border-radius: 16px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #B2EBF2;
+}
+
+.form-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+.form-label {
+    font-weight: bold;
+    color: #0D3B66;
+    margin-bottom: 0.5rem;
+}
+
+.form-input {
+    width: 100%;
+    display: block;
+    padding: 0.75rem 1rem;
+    border: 2px solid #B2EBF2;
+    border-radius: 10px;
+    background-color: #E0F7FA;
+    color: #0D3B66;
+    font-size: 1rem;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.form-input:focus {
+    border-color: #FF6F61;
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 111, 97, 0.5);
+    background-color: #ffffff;
+}
+
+button {
+    background-color: #FF6F61;
+    color: #ffffff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #E55A4F;
 }
