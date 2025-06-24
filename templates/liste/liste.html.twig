@@ -12,6 +12,10 @@
                 <p class="ingredient">Ingrédient spécial : {{ glace.ingredientSpecial }}</p>
                 <p class="cone-type">Cône : {{ glace.cones.type }}</p>
 
+                {# IMAGE  #}
+                {% if glace.imageName %}
+                    <img src="{{ asset('uploads/images/' ~ glace.imageName) }}" alt="Image de {{ glace.nom }}" class="glace-image">
+                {% endif %}
 
                 {# FORM DELETE  #}
                 <div class="card-actions">               

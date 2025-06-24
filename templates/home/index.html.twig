@@ -8,4 +8,12 @@
         {{ message }}
     </div>
     {% endfor %}
+
+    {% if username %}
+        <h3>Bonjour {{ username }} !</h3>
+    {% else %}
+        <h3>Bienvenue sur le site</h3>
+    {% endif %}
+
+    
 {% endblock %}

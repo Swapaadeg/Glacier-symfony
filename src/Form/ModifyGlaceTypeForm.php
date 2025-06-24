@@ -7,6 +7,7 @@ use App\Entity\Glaces;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ModifyGlaceTypeForm extends AbstractType
@@ -20,7 +21,21 @@ class ModifyGlaceTypeForm extends AbstractType
                 'class' => Cones::class,
                 'choice_label' => 'id',
             ])
-        ;
+            ->add('imageFile', FileType::class, [
+                'required' => false,
+                'mapped' => true,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '2M',
+                        'mimeTypes' => [
+                            'image/jpeg',
+                            'image/png',
+                            'image/gif',
+                        ],
+                        'mimeTypesMessage' => 'Veuillez uploader une image valide (JPEG, PNG, GIF)',
+                    ])
+                ],
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
