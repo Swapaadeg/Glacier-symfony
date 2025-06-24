@@ -47,7 +47,6 @@ class GlacesTypeForm extends AbstractType
                     ])
                 ],
             ]);
-        ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
