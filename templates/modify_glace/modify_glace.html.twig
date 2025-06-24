@@ -26,7 +26,12 @@
             'attr': { 'class': 'form-input'}
         }) }}
     </div>
-        {{ form_widget (glaceForm)}}
+        <div class="form-group toppings">
+            <label class="form-label">Toppings</label>
+            <div class="checkbox-grid">
+                {{ form_widget(glaceForm.topping) }}
+            </div>
+        </div>
         <button>Modifier votre glace</button>
     {{ form_end (glaceForm)}}
 {% endblock %}

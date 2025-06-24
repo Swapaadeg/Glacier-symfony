@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\GlacesRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Doctrine\ORM\Mapping as ORM;
@@ -34,6 +36,18 @@ class Glaces
 
     #[ORM\Column(type: 'datetime', nullable: true)]
     private ?\DateTimeInterface $updatedAt = null;
+
+    /**
+     * @var Collection<int, Toppings>
+     */
+    #[ORM\ManyToMany(targetEntity: Toppings::class, inversedBy: 'glaces')]
+    private Collection $topping;
+
+    public function __construct()
+    {
+        $this->topping = new ArrayCollection();
+    }
+
 
     //setter & getter
     public function getId(): ?int
@@ -97,6 +111,30 @@ class Glaces
 
     public function getImageName(): ?string {
        return $this->imageName;
+    }
+
+    /**
+     * @return Collection<int, Toppings>
+     */
+    public function getTopping(): Collection
+    {
+        return $this->topping;
+    }
+
+    public function addTopping(Toppings $topping): static
+    {
+        if (!$this->topping->contains($topping)) {
+            $this->topping->add($topping);
+        }
+
+        return $this;
+    }
+
+    public function removeTopping(Toppings $topping): static
+    {
+        $this->topping->removeElement($topping);
+
+        return $this;
     }
 }
 

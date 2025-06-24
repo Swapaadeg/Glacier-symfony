@@ -12,6 +12,18 @@
                 <p class="ingredient">Ingrédient spécial : {{ glace.ingredientSpecial }}</p>
                 <p class="cone-type">Cône : {{ glace.cones.type }}</p>
 
+                {# Toppings  #}
+                {% if glace.topping is not empty %}
+                    <div class="toppings-list">
+                        {% for topping in glace.topping %}
+                            <span class="topping-badge">{{ topping.topping }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="no-topping">Aucun topping</p>
+                {% endif %}
+
+
                 {# IMAGE  #}
                 {% if glace.imageName %}
                     <img src="{{ asset('uploads/images/' ~ glace.imageName) }}" alt="Image de {{ glace.nom }}" class="glace-image">

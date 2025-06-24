@@ -4,11 +4,13 @@ namespace App\Form;
 
 use App\Entity\Cones;
 use App\Entity\Glaces;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use App\Entity\Toppings;
+use Vich\UploaderBundle\Entity\File;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 class ModifyGlaceTypeForm extends AbstractType
 {
@@ -20,6 +22,15 @@ class ModifyGlaceTypeForm extends AbstractType
             ->add('cones', EntityType::class, [
                 'class' => Cones::class,
                 'choice_label' => 'id',
+            ])
+            ->add('toppings', EntityType::class, [
+                'class' => Toppings::class,
+                'choice_label' => 'topping', 
+                'multiple' => true,
+                'expanded' => true,
+                'required' => false,
+                'label' => 'Toppings disponibles',
+                'attr' => ['class' => 'toppings-checkbox-group']
             ])
             ->add('imageFile', FileType::class, [
                 'required' => false,
